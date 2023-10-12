@@ -54,7 +54,7 @@ constraints:
   LoadBalancer, or a NodePort. The latter is cheaper)
 
 If your group produce 2 terraform programs respecting the *MUST* constraints
-above, you would get a note between 8/10 and 12/20, depending on the quality of
+above, you would get a note between 8/20 and 12/20, depending on the quality of
 your code.
 
 ### The bonus, fun layer
