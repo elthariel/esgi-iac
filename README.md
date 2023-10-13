@@ -46,8 +46,8 @@ constraints:
 - The terraform state of your main program MUST be stored in a remote (i.e.
   non-local) backend. Stating it more explicitly, use `backend "s3" {}`
 - It MUST be possible to deploy your app using only 3 commands,
-  - One to build and push the docker container (docker build)
-  - One to provision the state bucket  using tf
+  - One to build and push the docker container (`docker build --push [...]`)
+  - One to provision the state bucket using tf.
   - A last one to provision the terraform cluster and all the kubernetes
     resources required to deploy your app in the cluster. There MUST be no other
     manual actions required. It means there must be 2 terraform programs.
@@ -86,7 +86,7 @@ Without further ado, here's the list of optional items of the project:
   datastore (2)
 - The app you're deploying has an additional container running a different, but
   related process, for example a background job processor. (1)
-- The app has automated scaling based on CPU usage of the container. (1.5)
+- The app has automated scaling based on CPU usage of the container (HorizontalPodAutoscaling). (1.5)
 - The app container image is stored in a private container registry with the
   credentials injected as a kubernetes secret via terraform (1.5)
 - The private container registry is also created via terraform (1)
