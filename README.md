@@ -44,12 +44,13 @@ constraints:
 - The cluster and the app provisioning code must be organized in dedicated
   terraform modules, and used from the main program
 - The terraform state of your main program MUST be stored in a remote (i.e.
-  non-local) backend
-- It MUST be possible to deploy your app using only 2 commands, one to provision
-  the state bucket, another to provision the terraform cluster and all the
-  kubernetes resources required to deploy your app in the cluster. There SHOULD
-  be no other manual actions required. It means there must be 2 terraform
-  programs.
+  non-local) backend. Stating it more explicitly, use `backend "s3" {}`
+- It MUST be possible to deploy your app using only 3 commands,
+  - One to build and push the docker container (docker build)
+  - One to provision the state bucket  using tf
+  - A last one to provision the terraform cluster and all the kubernetes
+    resources required to deploy your app in the cluster. There MUST be no other
+    manual actions required. It means there must be 2 terraform programs.
 - Your app MUST be available publicly on the Internet (you can use a
   LoadBalancer, or a NodePort. The latter is cheaper)
 
