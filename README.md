@@ -37,7 +37,7 @@ constraints:
   authentication)
 - The app you're deploying MUST use a database of some sort (postgresql, mysql,
   mongo, etc.)
-- The datastore MUST be deployed either inside kubernetes OR as a managed
+- The database MUST be deployed either inside kubernetes OR as a managed
   scaleway service provisionned through terraform.
 - The kubernetes cluster MUST be provisioned on scaleway using terraform
 - The app MUST be deployed as a Pod using terraform via the kubernetes provider
